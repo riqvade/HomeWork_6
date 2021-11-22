@@ -6,10 +6,6 @@ try
     {
         Point[] points = Point.GetArrayOfPoints(i);
 
-        Polygon polygon = new Polygon(points);
-
-        double perimeter = polygon.Perimeter();
-
         Console.WriteLine($"Колличество сторон многоугольника равно: {i}");
         Console.WriteLine();
 
@@ -18,7 +14,9 @@ try
             Console.WriteLine(point.ToString());
         }
 
-        Console.WriteLine($"Периметер многоугольника равен: {perimeter}");
+        Polygon polygon = new Polygon(points);
+        
+        Console.WriteLine($"Периметер фигуры \"{polygon.Name}\" равен: {polygon.Perimeter()}");
         Console.WriteLine();
     }
 }
