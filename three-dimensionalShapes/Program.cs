@@ -5,22 +5,71 @@ using three_dimensionalShapes;
 try
 {
     Box box1 = new Box(5.5, "Базовый куб");
-    Box testBox = new Box(5.5, "Базовый куб");
-    box1.Add(Ball.GetRandomBall());
-    Box box2 = new Box(4);
-    Cylinder smallCylinder = new Cylinder(2, 1, "Малый целиндр");
-    box2.Add(smallCylinder);
-    box1.Add(box2);
 
-    box1.Add(Pyramid.GetRandomPyramid());
-    box1.Add(new Pyramid(5, 7, "Пирамида Хеопса"));
-    box1.Add(Pyramid.GetRandomPyramid());
-    box1.Add(new Cylinder(2, 2, "Малый целиндр"));
-    box1.Add(smallCylinder);
-    box1.Add(new Cylinder(3, 2, "Большой целиндр"));
+
+    Ball ball = new Ball(3, "Шар");
+
+    if (box1.Add(ball) == true)
+    {
+        Console.WriteLine($"В фигуру \"{box1.Name}\" добавлена фигура: \"{ball.Name}\" объемом: {Math.Round(ball.Volume(), 3)} м3");
+        Console.WriteLine($"Осталось: {Math.Round(box1.GetFreeSpace(), 3)} м3 из {Math.Round(box1.GetFreeSpace(), 3)} м3");
+        Console.WriteLine();
+    }
+    else
+    {
+        Console.WriteLine($"Для добавления фигуры {ball.Name} не хватает места");
+        Console.WriteLine();
+    }
 
     box1.PrintFigures();
-    box2.PrintFigures();
+
+    Pyramid pyramid1 = new Pyramid(5, 1, "Пирамида 1");
+    if (box1.Add(pyramid1) == true)
+    {
+        Console.WriteLine($"В фигуру \"{box1.Name}\" добавлена фигура: \"{pyramid1.Name}\" объемом: {Math.Round(ball.Volume(), 3)} м3");
+        Console.WriteLine($"Осталось: {Math.Round(box1.GetFreeSpace(), 3)} м3 из {Math.Round(box1.GetFreeSpace(), 3)} м3");
+        Console.WriteLine();
+    }
+    else
+    {
+        Console.WriteLine($"Для добавления фигуры {pyramid1.Name} не хватает места");
+        Console.WriteLine();
+    }
+
+    box1.PrintFigures();
+
+    Pyramid pyramid2 = new Pyramid(4, 3, "Пирамида 2");
+    if (box1.Add(pyramid2) == true)
+    {
+        Console.WriteLine($"В фигуру \"{box1.Name}\" добавлена фигура: \"{pyramid2.Name}\" объемом: {Math.Round(ball.Volume(), 3)} м3");
+        Console.WriteLine($"Осталось: {Math.Round(box1.GetFreeSpace(), 3)} м3 из {Math.Round(box1.GetFreeSpace(), 3)} м3");
+        Console.WriteLine();
+    }
+    else
+    {
+        Console.WriteLine($"Для добавления фигуры {pyramid2.Name} не хватает места");
+        Console.WriteLine();
+    }
+
+    box1.PrintFigures();
+
+    Cylinder cylinder1 = new Cylinder(200, 100, "Малый целиндр");
+    if (box1.Add(cylinder1) == true)
+    {
+        Console.WriteLine($"В фигуру \"{box1.Name}\" добавлена фигура: \"{cylinder1.Name}\" объемом: {Math.Round(ball.Volume(), 3)} м3");
+        Console.WriteLine($"Осталось: {Math.Round(box1.GetFreeSpace(), 3)} м3 из {Math.Round(box1.GetFreeSpace(), 3)} м3");
+        Console.WriteLine();
+    }
+    else
+    {
+        Console.WriteLine($"Для добавления фигуры {cylinder1.Name} не хватает места");
+        Console.WriteLine();
+    }
+
+
+    box1.PrintFigures();
+
+    Cylinder cylinder2 = new Cylinder(10, 20, "Малый целиндр");
 }
 catch (Exception ex)
 {

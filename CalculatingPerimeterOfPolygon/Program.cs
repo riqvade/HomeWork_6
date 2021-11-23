@@ -2,23 +2,40 @@
 
 try
 {
-    for (int i = 3; i <= 5; i++)
+    Point[] points = Point.GetArrayOfPoints(3);
+    Console.WriteLine($"Колличество сторон многоугольника равно: {3}");
+    Console.WriteLine();
+    foreach (Point point in points)
     {
-        Point[] points = Point.GetArrayOfPoints(i);
-
-        Console.WriteLine($"Колличество сторон многоугольника равно: {i}");
-        Console.WriteLine();
-
-        foreach (Point point in points)
-        {
-            Console.WriteLine(point.ToString());
-        }
-
-        Polygon polygon = new Polygon(points);
-        
-        Console.WriteLine($"Периметер фигуры \"{polygon.Name}\" равен: {polygon.Perimeter()}");
-        Console.WriteLine();
+        Console.WriteLine(point.ToString());
     }
+    Polygon polygon = new Polygon(points, $"Многоугольник 1");
+    Console.WriteLine($"Периметер фигуры \"{polygon.Name}\" равен: {polygon.Perimeter()}");
+    Console.WriteLine();
+
+
+    points = Point.GetArrayOfPoints(4);
+    Console.WriteLine($"Колличество сторон многоугольника равно: {4}");
+    Console.WriteLine();
+    foreach (Point point in points)
+    {
+        Console.WriteLine(point.ToString());
+    }
+    polygon = new Polygon(points, $"Многоугольник 2");
+    Console.WriteLine($"Периметер фигуры \"{polygon.Name}\" равен: {polygon.Perimeter()}");
+    Console.WriteLine();
+
+
+    points = Point.GetArrayOfPoints(5);
+    Console.WriteLine($"Колличество сторон многоугольника равно: {5}");
+    Console.WriteLine();
+    foreach (Point point in points)
+    {
+        Console.WriteLine(point.ToString());
+    }
+    polygon = new Polygon(points, $"Многоугольник 3");
+    Console.WriteLine($"Периметер фигуры \"{polygon.Name}\" равен: {polygon.Perimeter()}");
+    Console.WriteLine();
 }
 catch (Exception ex)
 {

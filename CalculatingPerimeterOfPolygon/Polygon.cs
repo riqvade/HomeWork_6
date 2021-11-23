@@ -10,79 +10,41 @@ namespace HomeWork_6
     {
         private List<Point> points = new List<Point>();
 
-        public Polygon(Point p1, Point p2, Point p3, string name = "Многоугольник")
+        public Polygon(Point p1, Point p2, Point p3, string name)
         {
             points.Add(p1);
             points.Add(p2);
             points.Add(p3);
-
-            if (name != "Многоугольник")
-            {
-                Name = name;
-            }
-            else
-            {
-                PolygonNumber++;
-                Name = $"{name} {PolygonNumber}";
-            }
+            Name = name;
         }
 
-        public Polygon(Point p1, Point p2, Point p3, Point p4, string name = "Многоугольник")
+        public Polygon(Point p1, Point p2, Point p3, Point p4, string name)
         {
             points.Add(p1);
             points.Add(p2);
             points.Add(p3);
             points.Add(p4);
-
-            if (name != "Многоугольник")
-            {
-                Name = name;
-            }
-            else
-            {
-                PolygonNumber++;
-                Name = $"{name} {PolygonNumber}";
-            }
+            Name = name;
         }
 
-        public Polygon(Point p1, Point p2, Point p3, Point p4, Point p5, string name = "Многоугольник")
+        public Polygon(Point p1, Point p2, Point p3, Point p4, Point p5, string name)
         {
             points.Add(p1);
             points.Add(p2);
             points.Add(p3);
             points.Add(p4);
             points.Add(p5);
-
-            if (name != "Многоугольник")
-            {
-                Name = name;
-            }
-            else
-            {
-                PolygonNumber++;
-                Name = $"{name} {PolygonNumber}";
-            }
+            Name = name;
         }
 
-        public Polygon(Point[] point, string name = "Многоугольник")
+        public Polygon(Point[] point, string name)
         {
             foreach(Point p in point)
             {
                 points.Add(p);
             }
-
-            if (name != "Многоугольник")
-            {
-                Name = name;
-            }
-            else
-            {
-                PolygonNumber++;
-                Name = $"{name} {PolygonNumber}";
-            }
+            Name = name;
         }
-
-        public static int PolygonNumber { get; private set; } = 0;
 
         public string Name { get; private set; }
 
