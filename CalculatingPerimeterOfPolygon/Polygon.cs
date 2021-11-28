@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeWork_6
 {
-    internal class Polygon
+    public class Polygon
     {
         private List<Point> points = new List<Point>();
 

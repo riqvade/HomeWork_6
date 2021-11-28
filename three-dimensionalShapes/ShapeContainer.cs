@@ -2,18 +2,20 @@
 
 namespace three_dimensionalShapes
 {
-    internal class ShapeContainer
+    public class ShapeContainer
     {
         public static ShapeContainer instance = new ShapeContainer();
 
-        private ISet<Shape> existingShapes = new HashSet<Shape>();
-        public void addShape(Shape shape)
+        public ISet<Shape> existingShapes = new HashSet<Shape>();
+        public bool addShape(Shape shape)
         {
             if (existingShapes.Contains(shape))
             {
+                return false;
                 throw new ArgumentException("Shape with this name already exists");
             }
             existingShapes.Add(shape);
+            return true;
         }
     }
 }

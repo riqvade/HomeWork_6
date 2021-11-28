@@ -2,7 +2,7 @@
 
 namespace three_dimensionalShapes
 {
-    internal class Cylinder : Shape
+    public class Cylinder : Shape
     {
         public Cylinder(double R, double H, string name) : base(name)
         {
@@ -21,7 +21,7 @@ namespace three_dimensionalShapes
         private double H { get; }
 
         /// <summary>
-        /// Возвращает объем циллиндра.
+        /// Возвращает объем цилиндра.
         /// </summary>
         public override double Volume()
         {

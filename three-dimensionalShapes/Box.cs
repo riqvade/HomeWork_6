@@ -2,12 +2,12 @@
 
 namespace three_dimensionalShapes
 {
-    internal class Box : Shape
+    public class Box : Shape
     {
         public Box(double H, string name) : base(name)
         {
             this.H = H;
-            V = Volume();
+            BoxVolume = Volume();
         }
 
         /// <summary>
@@ -18,7 +18,7 @@ namespace three_dimensionalShapes
         /// <summary>
         /// Объем куба.
         /// </summary>
-        private double V { get; set; }
+        private double BoxVolume { get; set; }
         private ISet<Shape> Shapes { get; set; } = new HashSet<Shape>();
 
         /// <summary>
@@ -35,14 +35,13 @@ namespace three_dimensionalShapes
         public bool Add(Shape shape)
         {
             double shapeVolume = shape.Volume();
-            if (shapeVolume > V)
+            if (shapeVolume > BoxVolume)
             {
-                double surplusVolume = Math.Round(shapeVolume - V, 3);
+                double surplusVolume = Math.Round(shapeVolume - BoxVolume, 3);
                 
                 return false;
             }
-            shape.parent = this;
-            V -= shapeVolume;
+            BoxVolume -= shapeVolume;
             
             Shapes.Add(shape);
             
@@ -52,7 +51,7 @@ namespace three_dimensionalShapes
 
         public double GetFreeSpace()
         {
-            return V;
+            return BoxVolume;
         }
 
         /// <summary>
@@ -65,7 +64,7 @@ namespace three_dimensionalShapes
             {
                 Console.WriteLine($"\"{shape.Name}\" объемом: {Math.Round(shape.Volume(), 3)} м3");
             }
-            Console.WriteLine($"В фигуре \"{Name}\" осталось: {Math.Round(V, 3)} м3 из {Math.Round(Volume(), 3)} м3");
+            Console.WriteLine($"В фигуре \"{Name}\" осталось: {Math.Round(BoxVolume, 3)} м3 из {Math.Round(Volume(), 3)} м3");
             Console.WriteLine();
         }
     }

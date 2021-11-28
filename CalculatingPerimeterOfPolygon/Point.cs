@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeWork_6
 {
-    internal class Point
+    public class Point
     {
         public Point(int x, int y, string pointName)
         {

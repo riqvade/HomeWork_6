@@ -2,7 +2,7 @@
 
 namespace three_dimensionalShapes
 {
-    internal class Ball : Shape
+    public class Ball : Shape
     {
         public Ball(double R, string name) : base(name)
         {
@@ -19,7 +19,7 @@ namespace three_dimensionalShapes
         /// </summary>
         public override double Volume()
         {
-            return Math.PI * 4 / 3 * R;
+            return Math.PI * 4.0 / 3.0 * R;
         }
     }
 }

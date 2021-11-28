@@ -2,17 +2,12 @@
 
 namespace three_dimensionalShapes
 {
-    internal class Pyramid : Shape
+    public class Pyramid : Shape
     {
         public Pyramid(double S, double H, string name) : base(name)
         {
             this.S = S;
             this.H = H;
-        }
-
-        override public double Volume()
-        {
-            return (S * H) / 3;
         }
 
         /// <summary>
@@ -25,5 +20,9 @@ namespace three_dimensionalShapes
         /// </summary>
         private double H { get; }
 
+        public override double Volume()
+        {
+            return (S * H) / 3.0;
+        }
     }
 }
